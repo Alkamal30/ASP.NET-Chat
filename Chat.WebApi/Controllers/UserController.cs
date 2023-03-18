@@ -1,5 +1,5 @@
-﻿using Chat.Domain.Entities;
-using Chat.Persistence.Repository.Interfaces;
+﻿using Chat.Application.Interfaces.Repository;
+using Chat.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

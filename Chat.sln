@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Persistence", "Chat.Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Domain", "Chat.Domain\Chat.Domain.csproj", "{EB472508-91B6-441D-B602-372EABBE7C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.WebApi", "Chat.WebApi\Chat.WebApi.csproj", "{5AA636EA-4683-42B2-B118-4F1A1C070D57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.WebApi", "Chat.WebApi\Chat.WebApi.csproj", "{5AA636EA-4683-42B2-B118-4F1A1C070D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Application", "Chat.Application\Chat.Application.csproj", "{35F9EED7-D480-47E7-88D4-ADDC52331DB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{5AA636EA-4683-42B2-B118-4F1A1C070D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AA636EA-4683-42B2-B118-4F1A1C070D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AA636EA-4683-42B2-B118-4F1A1C070D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F9EED7-D480-47E7-88D4-ADDC52331DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F9EED7-D480-47E7-88D4-ADDC52331DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F9EED7-D480-47E7-88D4-ADDC52331DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F9EED7-D480-47E7-88D4-ADDC52331DB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{6B1609D2-58DB-48ED-9652-1688CB5944A4} = {EFF7EB68-1732-4B07-A990-481A2156106E}
 		{EB472508-91B6-441D-B602-372EABBE7C49} = {FE6C7C22-8387-417D-B02A-D28AAD5AE91F}
 		{5AA636EA-4683-42B2-B118-4F1A1C070D57} = {D0B612DB-F397-42C4-AE2A-F215D00DBFBC}
+		{35F9EED7-D480-47E7-88D4-ADDC52331DB3} = {FE6C7C22-8387-417D-B02A-D28AAD5AE91F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84A4DD92-05D9-4261-8285-62EAE638A569}

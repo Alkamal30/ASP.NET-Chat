@@ -1,5 +1,5 @@
 ﻿
-namespace Chat.Persistence.Repository.Interfaces;
+namespace Chat.Application.Interfaces.Repository;
 
 public interface IRepository<T> where T : class {
 	

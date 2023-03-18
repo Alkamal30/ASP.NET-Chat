@@ -1,6 +1,6 @@
 ﻿using Chat.Domain.Entities;
 
-namespace Chat.Persistence.Repository.Interfaces;
+namespace Chat.Application.Interfaces.Repository;
 
 public interface IUserRepository : IRepository<User> {
 

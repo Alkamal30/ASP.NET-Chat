@@ -1,21 +1,16 @@
 using Chat.Persistence;
-using Chat.Persistence.Repository.Implementation;
-using Chat.Persistence.Repository.Interfaces;
+using Chat.Persistence.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace Chat.WebApi {
-	public class Program {
+namespace Chat.WebApi
+{
+    public class Program {
 		public static void Main(string[] args) {
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
 
-			builder.Services.AddDbContext<ChatDbContext>(
-				options => options.UseNpgsql(
-					builder.Configuration.GetConnectionString("Default")	
-				)
-			);
-			builder.Services.AddScoped<IUnitOfWorks, UnitOfWorks>();
+			builder.Services.AddPersistence(builder.Configuration);
 
 			builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
