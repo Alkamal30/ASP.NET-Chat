@@ -1,6 +1,6 @@
 ﻿using Chat.Application.Interfaces.Repository;
 using Chat.Domain.Entities;
-using Microsoft.AspNetCore.Http;
+using Chat.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.WebApi.Controllers;
@@ -15,7 +15,6 @@ public class UserController : ControllerBase {
 
 
 	private IUnitOfWorks _unitOfWorks;
-
 
 
 	[HttpGet]
@@ -53,5 +52,51 @@ public class UserController : ControllerBase {
 		_unitOfWorks.Save();
 
 		return Ok();
+	}
+
+
+	[HttpPost("Register")]
+	public IActionResult Register(UserRegistrationViewModel registrationViewModel) {
+
+		if(!ModelState.IsValid)
+			return BadRequest("Registration ViewModel is not valid!");
+
+		try {
+			User user = new User() {
+				Login = registrationViewModel.Login,
+				Password = registrationViewModel.Password
+			};
+
+			_unitOfWorks.UserRepository.Add(user);
+			_unitOfWorks.Save();
+
+			return Ok(user);
+		}
+		catch(Exception exception) {
+			return BadRequest(exception.Message);
+		}
+	}
+
+	[HttpPost("Authorize")]
+	public IActionResult Authorize(UserAuthorizationViewModel authorizationViewModel) {
+
+		if(!ModelState.IsValid)
+			return BadRequest("Authorization ViewModel is not valid!");
+
+		try {
+			User? user = _unitOfWorks.UserRepository
+				.GetFirstOrDefault(
+					u => u.Login == authorizationViewModel.Login 
+					&& u.Password == authorizationViewModel.Password
+				);
+
+			if(user is null)
+				return BadRequest("Incorrect Login or Password!");
+
+			return Ok();
+		}
+		catch(Exception exception) {
+			return BadRequest(exception.Message);
+		}
 	}
 }
